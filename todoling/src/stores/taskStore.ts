@@ -12,6 +12,14 @@ const sortWithOption = (data: task[], option: string) => {
       return data.sort((a, b: task) => {
         return a.dueDate.localeCompare(b.dueDate);
       });
+    case "ZtoA":
+      return data.sort((a, b: task) => {
+        return b.text.toLowerCase().localeCompare(a.text.toLowerCase());
+      });
+    case "9to0":
+      return data.sort((a, b: task) => {
+        return b.dueDate.localeCompare(a.dueDate);
+      });
     default:
       return data;
   }

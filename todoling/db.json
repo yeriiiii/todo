@@ -17,6 +17,18 @@
       "text": "Pinia 공부하기",
       "dueDate": "23-06-05",
       "isDone": false
+    },
+    {
+      "id": "a2949af0-048a-11ee-8ef5-11ca913c8739",
+      "text": "Date Picker 구현하기",
+      "dueDate": "23-06-09",
+      "isDone": false
+    },
+    {
+      "id": "b10978d0-048a-11ee-8ef5-11ca913c8739",
+      "text": "Todo 수정 기능 구현하기",
+      "dueDate": "23-06-08",
+      "isDone": false
     }
   ]
 }
