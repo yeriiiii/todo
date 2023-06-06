@@ -10,13 +10,13 @@
       "id": "8f2fb110-005d-11ee-ba6e-8be5f4e28888",
       "text": "Todo app routing 구현하기",
       "dueDate": "23-06-02",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "0d208e60-005d-11ee-ba6e-8be5f4e28888",
       "text": "Pinia 공부하기",
       "dueDate": "23-06-05",
-      "isDone": false
+      "isDone": true
     },
     {
       "id": "a2949af0-048a-11ee-8ef5-11ca913c8739",
