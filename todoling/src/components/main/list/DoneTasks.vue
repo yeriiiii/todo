@@ -3,20 +3,21 @@
     <div class="flex items-center p-2 mt-2 text-xl font-bold text-blue-400">
       DONE
     </div>
-    <ul class="space-y-3 my-1 text-md text-gray-400">
+    <ul class="my-1 space-y-3 text-gray-400 text-md">
       <li v-for="task in taskStore.getDoneTasks" :key="task.id">
         <div
-          class="p-3 w-full h-13 bg-gray-100 flex items-center justify-content"
+          class="flex items-center w-full p-3 bg-gray-100 h-13 justify-content"
         >
           <div
             @click="toggleThisTask(task.id)"
-            class="w-5 h-5 ml-1 mr-4 border-2 bg-gray-200 hover:bg-gray-50"
+            class="w-5 h-5 ml-1 mr-4 bg-gray-200 border-2 hover:bg-gray-50"
           ></div>
           <div>{{ task.text }}</div>
-          <div class="ml-auto flex">
+          <div class="flex ml-auto">
+            <!-- <button @click="updateThisTask(task.id, `test`, task.dueDate, true)">수정</button> -->
             <div v-if="task.dueDate !== `null`">{{ task.dueDate }}</div>
             <img
-              class="hover:bg-gray-200 rounded-lg ml-3"
+              class="ml-3 rounded-lg hover:bg-gray-200"
               @click="removeThisTask(task.id)"
               src="../../../assets/images/trash_gg.svg"
             />
@@ -29,7 +30,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useTaskStore } from "../../../stores/taskStore.js";
-import { deleteTasks } from "../../../api/http-module";
+import { deleteTask, putTask } from "../../../api/http-module";
 
 
 export default defineComponent({
@@ -43,8 +44,18 @@ export default defineComponent({
       taskStore.toggleTask(id);
     };
 
+    const updateThisTask = async (id: string, text: string, dueDate: string, isDone: boolean) => {
+      const response = await putTask(id, text, dueDate, isDone);
+      if (response.status === 200) {
+        console.log(response);
+      } else {
+        alert("put request failure");
+        console.error(response);
+      }
+    };
+
     const removeThisTask = async (id: string) => {
-      const response = await deleteTasks(id);
+      const response = await deleteTask(id);
       if (response.status === 200) {
         taskStore.removeTask(id);
       } else {
@@ -52,7 +63,7 @@ export default defineComponent({
         console.error(response);
       }
     };
-    return { taskStore, toggleThisTask, removeThisTask };
+    return { taskStore, toggleThisTask, removeThisTask, updateThisTask };
   },
 });
 </script>

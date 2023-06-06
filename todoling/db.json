@@ -13,33 +13,9 @@
       "isDone": false
     },
     {
-      "id": "89d99280-005d-11ee-ba6e-8be5f4e28888",
-      "text": "welcome kit 수령하기",
-      "dueDate": "23-05-20",
-      "isDone": true
-    },
-    {
       "id": "0d208e60-005d-11ee-ba6e-8be5f4e28888",
       "text": "Pinia 공부하기",
       "dueDate": "23-06-05",
-      "isDone": false
-    },
-    {
-      "id": "6ae2eb40-0438-11ee-84dd-2780e5931d17",
-      "text": "다이소 갔다오기",
-      "dueDate": "null",
-      "isDone": false
-    },
-    {
-      "id": "c0e532f0-0438-11ee-84dd-2780e5931d17",
-      "text": "햄버거 주문하기",
-      "dueDate": "null",
-      "isDone": false
-    },
-    {
-      "id": "c2c5b2c0-0438-11ee-84dd-2780e5931d17",
-      "text": "화장실 청소",
-      "dueDate": "null",
       "isDone": false
     }
   ]

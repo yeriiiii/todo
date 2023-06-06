@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="flex items-center flex-row justify-items-stetch">
+    <div class="flex flex-row items-center justify-items-stetch">
       <div
-        class="mt-3 mb-2 px-3 basis-full h-10 bg-gray-100 rounded-lg flex items-center"
+        class="flex items-center h-10 px-3 mt-3 mb-2 bg-gray-100 rounded-lg basis-full"
       >
         <input
-          class="border-none bg-transparent basis-full"
+          class="bg-transparent border-none basis-full"
           v-model="newTaskText"
           @keyup.enter="addTaskWithOutDate(newTaskText)"
           placeholder="할 일을 입력하세요!"
@@ -26,21 +26,21 @@
 
       <button
         @click="addTaskWithOutDate(newTaskText)"
-        class="ml-2 basis-10 h-10 rounded-md items-center font-extrabold text-xl text-indigo-500 bg-indigo-100 hover:bg-indigo-200"
+        class="items-center h-10 ml-2 text-xl font-extrabold text-indigo-500 bg-indigo-100 rounded-md basis-10 hover:bg-indigo-200"
       >
         +
       </button>
     </div>
     <div
-      class="w-34 h-11 p-2 absolute right-16 bg-indigo-50 rounded-lg flex items-center"
+      class="absolute flex items-center p-2 rounded-lg w-34 h-11 right-16 bg-indigo-50"
       v-if="datePopupVisible"
     >
       <input
-        class="w-16 border-none bg-transparent ml-3 text-slate-800 text-sm"
+        class="w-16 ml-3 text-sm bg-transparent border-none text-slate-800"
         v-model="dueDateInput"
       />
       <div
-        class="w-8 h-6 bg-indigo-200 rounded-md ml-2 mr-1 text-center hover:bg-indigo-300"
+        class="w-8 h-6 ml-2 mr-1 text-center bg-indigo-200 rounded-md hover:bg-indigo-300"
         @click="setDueDate(dueDateInput)"
       >
         ✓
@@ -53,7 +53,7 @@ import { Ref, defineComponent, ref } from "vue";
 import { useTaskStore } from "../../../stores/taskStore.js";
 import { task } from "../../../declaration/interface.js";
 import { v1 as uuid } from "uuid";
-import { postTasks } from "../../../api/http-module";
+import { postTask } from "../../../api/http-module";
 import dayjs from "dayjs";
 
 export default defineComponent({
@@ -75,7 +75,7 @@ export default defineComponent({
         isDone: false,
       };
 
-      const response = await postTasks(newTask);
+      const response = await postTask(newTask);
       if (response.status === 201) {
         taskStore.addTask(newTask);
       } else {
