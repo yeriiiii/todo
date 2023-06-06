@@ -18,7 +18,7 @@
             <span class="flex-1 ml-3 whitespace-nowrap">ALL</span>
             <span
               class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-gray-800 bg-gray-200 rounded-full"
-              >5</span
+              >{{ taskStore.getAllTasks.length }}</span
             >
           </router-link>
         </li>
@@ -31,7 +31,7 @@
             <span class="flex-1 ml-3 whitespace-nowrap">TODO</span>
             <span
               class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-red-800 bg-red-200 rounded-full"
-              >3</span
+              >{{ taskStore.getTodoTasks.length }}</span
             >
           </router-link>
         </li>
@@ -44,7 +44,7 @@
             <span class="flex-1 ml-3 whitespace-nowrap">DONE</span>
             <span
               class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-8=700 bg-blue-100 rounded-full"
-              >2</span
+              >{{ taskStore.getDoneTasks.length }}</span
             >
           </router-link>
         </li>
@@ -53,4 +53,17 @@
   </aside>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts">
+import { useTaskStore } from "../../stores/taskStore.js";
+import { defineComponent } from "vue";
+
+
+export default defineComponent({
+  setup() {
+    const taskStore = useTaskStore();
+
+    return { taskStore };
+    
+  }
+});
+</script>
