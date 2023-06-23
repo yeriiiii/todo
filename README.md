@@ -1,4 +1,5 @@
-simple todo application 
+# Todoling
+simple todo application
 
 - Vue.js 3.2.47
 - Vue router 4.2.2
