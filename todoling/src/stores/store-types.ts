@@ -1,6 +1,6 @@
-import { task } from "../declaration/interface"
+import { Task, SortOption } from "../declaration/index";
 
 export interface TaskState {
-    tasks: task[];
-    sortOption: string;
+    tasks: Task[];
+    sortOption: SortOption;
 }

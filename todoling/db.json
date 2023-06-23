@@ -3,31 +3,49 @@
     {
       "id": "accd7a90-005d-11ee-ba6e-8be5f4e28888",
       "text": "composition API 공부하기",
-      "dueDate": "23-05-31",
+      "dueDate": "2023-05-31",
       "isDone": true
     },
     {
       "id": "8f2fb110-005d-11ee-ba6e-8be5f4e28888",
       "text": "Todo app routing 구현하기",
-      "dueDate": "23-06-02",
+      "dueDate": "2023-06-02",
       "isDone": true
     },
     {
       "id": "0d208e60-005d-11ee-ba6e-8be5f4e28888",
       "text": "Pinia 공부하기",
-      "dueDate": "23-06-05",
+      "dueDate": "2023-06-05",
       "isDone": true
     },
     {
-      "id": "a2949af0-048a-11ee-8ef5-11ca913c8739",
-      "text": "Date Picker 구현하기",
-      "dueDate": "23-06-09",
+      "id": "258e7050-04ce-11ee-9cb8-1bf0454d167a",
+      "text": "Todo app 수정 기능 구현하기",
+      "dueDate": "2023-06-09",
       "isDone": false
     },
     {
-      "id": "b10978d0-048a-11ee-8ef5-11ca913c8739",
-      "text": "Todo 수정 기능 구현하기",
-      "dueDate": "23-06-08",
+      "id": "5d079ff0-04d5-11ee-94c7-21a94b37df3d",
+      "text": "Todo app date picker 구현하기",
+      "dueDate": "2023-06-07",
+      "isDone": true
+    },
+    {
+      "id": "741d8940-06a4-11ee-9689-9bb0787cb4cf",
+      "text": "Todo app 피드백 반영하기",
+      "dueDate": "2023-06-09",
+      "isDone": true
+    },
+    {
+      "id": "487a1ad0-098b-11ee-85b9-9d2cf0db3d7c",
+      "text": "두번째 과제 시작하기",
+      "dueDate": "2023-06-17",
+      "isDone": true
+    },
+    {
+      "id": "f1fa77a0-0f2e-11ee-a393-9fa5dc019094",
+      "text": "Navigation Guard 공부하기",
+      "dueDate": "2023-07-04",
       "isDone": false
     }
   ]

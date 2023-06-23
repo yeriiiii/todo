@@ -1,30 +1,34 @@
 import { createWebHistory, createRouter } from "vue-router";
-import AllMain from "../components/main/AllMain.vue";
-import TodoMain from "../components/main/TodoMain.vue";
-import DoneMain from "../components/main/DoneMain.vue";
+import Main from "@/views/pages/Main.vue";
+import ErrorPage from "@/views/pages/ErrorPage.vue";
+import { TaskListType } from "@/declaration/index";
 
 const routes = [
-  {
-    path: "/todo",
-    component: TodoMain,
-  },
-  {
-    path: "/done",
-    component: DoneMain,
-  },
-  {
-    path: "/all",
-    component: AllMain,
-  },
-  {
-    path: "/",
-    component: AllMain,
-  },
+    {
+        path: "/all",
+        component: Main,
+        props: { taskListType: TaskListType.ALL },
+    },
+    {
+        path: "/todo",
+        component: Main,
+        props: { taskListType: TaskListType.TODO },
+    },
+    {
+        path: "/done",
+        component: Main,
+        props: { taskListType: TaskListType.DONE },
+    },
+    {
+        path: "/:pathMatch(.*)",
+        name: "ErrorPage",
+        component: ErrorPage,
+    },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+    history: createWebHistory(),
+    routes,
 });
 
 export default router;
